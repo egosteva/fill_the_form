@@ -1,4 +1,5 @@
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +12,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeForm {
     @BeforeAll
-    static void beforeAll(){
+    static void beforeAll() {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
     }
@@ -19,6 +20,8 @@ public class PracticeForm {
     @Test
     void fillFormTest() {
         open("/automation-practice-form");
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
 
         // Name
         $("#firstName").setValue("Andrey");
@@ -65,11 +68,11 @@ public class PracticeForm {
         $(byText("Panipat")).click();
 
         // Submit
-       $("#submit").click();
-       $(".modal-dialog").should(appear);
-       $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-       $(".table-responsive").shouldHave(text("Andrey"), text("Mokeev"), text("mokeev_a@somemail.ru"), text("Male"),
-               text("9014045055"), text("17 May,2008"), text("Maths"), text("Music"), text("0d6de7af1701b7f6ff551d4474ced401.jpeg"),
-               text("NY"), text("Haryana"), text("Panipat"));
+        $("#submit").click();
+        $(".modal-dialog").should(appear);
+        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+        $(".table-responsive").shouldHave(text("Andrey"), text("Mokeev"), text("mokeev_a@somemail.ru"), text("Male"),
+                text("9014045055"), text("17 May,2008"), text("Maths"), text("Music"), text("0d6de7af1701b7f6ff551d4474ced401.jpeg"),
+                text("NY"), text("Haryana"), text("Panipat"));
     }
 }
