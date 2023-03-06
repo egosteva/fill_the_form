@@ -1,9 +1,6 @@
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
-import java.io.File;
 
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
@@ -31,9 +28,6 @@ public class PracticeForm {
         $("#userEmail").setValue("mokeev_a@somemail.ru");
 
         // Gender
-        // $("#gender-radio-1").click(); // wrong
-        // $("#gender-radio-1").selectRadio("Male"); // wrong
-        // $(byText("Male")).click(); // not very good
         $("#gender-radio-1").parent().click();
 
         // Mobile
@@ -55,7 +49,6 @@ public class PracticeForm {
         $("#hobbies-checkbox-3").parent().click();
 
         // Picture
-        // $("#uploadPicture").uploadFile(new File("src/test/resources/img/0d6de7af1701b7f6ff551d4474ced401.jpeg"));
         $("#uploadPicture").uploadFromClasspath("img/0d6de7af1701b7f6ff551d4474ced401.jpeg");
 
         //  Current Address
