@@ -15,7 +15,8 @@ public class RegistrationPage {
             lastNameInput = $("#lastName"),
             userEmailInput = $("#userEmail"),
             genderChoice = $("#genterWrapper"),
-            phoneNumberInput = $("#userNumber");
+            phoneNumberInput = $("#userNumber"),
+            dateOfBirthInput = $("#dateOfBirthInput");
 
 
     public RegistrationPage openPage() {
@@ -64,16 +65,16 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setBirthDate(String day, String month, String year) {
-        $("#dateOfBirthInput").click();
+        dateOfBirthInput.click();
         calendarComponent.setDate(day, month, year);
 
         return this;
     }
 
-   // public RegistrationPage setBirthDate(String day, String month, String year) {
-     //
-       // calendarComponent.setDate(day, month, year);
+    // public RegistrationPage setBirthDate(String day, String month, String year) {
+    //
+    // calendarComponent.setDate(day, month, year);
 
-        //return this;
+    //return this;
     //}
 }
