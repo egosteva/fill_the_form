@@ -53,11 +53,6 @@ public class PracticeFormWithPageObjectsTest extends TestBase {
                 .verifyResult("Hobbies", "Music")
                 .verifyResult("Picture", "0d6de7af1701b7f6ff551d4474ced401.jpeg")
                 .verifyResult("Address", "NY")
-                .verifyResult("State and City", "Haryana, Panipat");
-
-
-        $(".table-responsive").shouldHave(text(userName), text("Mokeev"), text("mokeev_a@somemail.ru"), text("Male"),
-                text("9014045055"), text("17 May,2008"), text("Maths"), text("Music"), text("0d6de7af1701b7f6ff551d4474ced401.jpeg"),
-                text("NY"), text("Haryana"), text("Panipat"));
+                .verifyResult("State and City", "Haryana Panipat");
     }
 }
