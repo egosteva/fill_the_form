@@ -18,15 +18,9 @@ public class PracticeFormWithPageObjects extends TestBase {
                 .setLastName("Mokeev")
                 .setUserEmail("mokeev_a@somemail.ru")
                 .setGender("Male")
-                .setPhoneNumber("9014045055");
+                .setPhoneNumber("9014045055")
+                .setBirthDate("17", "4", "2008");
 
-        // Date of Birth
-        $("#dateOfBirthInput").click();
-        $(".react-datepicker__year-dropdown-container--select").click();
-        $(".react-datepicker__year-select").selectOptionByValue("2008");
-        $(".react-datepicker__month-dropdown-container--select").click();
-        $(".react-datepicker__month-select").selectOptionByValue("4");
-        $(".react-datepicker__day--017").click();
 
         // Subjects
         $("#subjectsInput").setValue("Mat");
