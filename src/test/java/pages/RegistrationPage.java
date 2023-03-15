@@ -16,34 +16,48 @@ public class RegistrationPage {
             phoneNumberInput = $("#userNumber");
 
 
-    public void openPage() {
+    public RegistrationPage openPage() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text(TITLE_TEXT));
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
+
+        return this;
     }
 
-    public void setFirstName(String value) {
+    public RegistrationPage setFirstName(String value) {
         firstNameInput.setValue(value);
+
+        return this;
     }
 
-    public void setLastName(String value) {
+    public RegistrationPage setLastName(String value) {
         lastNameInput.setValue(value);
+
+        return this;
     }
 
-    public void clearLastName() {
+    public RegistrationPage clearLastName() {
         lastNameInput.clear();
+
+        return this;
     }
 
-    public void setUserEmail(String value) {
+    public RegistrationPage setUserEmail(String value) {
         userEmailInput.setValue(value);
+
+        return this;
     }
 
-    public void setGender(String value) {
+    public RegistrationPage setGender(String value) {
         genderChoice.$(byText(value)).click();
+
+        return this;
     }
 
-    public void setPhoneNumber(String value) {
+    public RegistrationPage setPhoneNumber(String value) {
         phoneNumberInput.setValue(value);
+
+        return this;
     }
 }

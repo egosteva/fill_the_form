@@ -24,13 +24,12 @@ public class PracticeFormWithPageObjects {
     void fillFormTest() {
         String userName = "Andrey";
 
-        registrationPage.openPage();
-        registrationPage.setFirstName(userName);
-        registrationPage.setLastName("Mokeev");
-        registrationPage.setUserEmail("mokeev_a@somemail.ru");
-        registrationPage.setGender("Male");
-        registrationPage.setPhoneNumber("9014045055");
-
+        registrationPage.openPage()
+                .setFirstName(userName)
+                .setLastName("Mokeev")
+                .setUserEmail("mokeev_a@somemail.ru")
+                .setGender("Male")
+                .setPhoneNumber("9014045055");
 
         // Date of Birth
         $("#dateOfBirthInput").click();
