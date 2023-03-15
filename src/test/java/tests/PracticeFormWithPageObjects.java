@@ -3,6 +3,7 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import pages.RegistrationPage;
 
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
@@ -10,6 +11,9 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormWithPageObjects {
+    RegistrationPage registrationPage = new RegistrationPage();
+
+
     @BeforeAll
     static void beforeAll() {
         Configuration.browserSize = "1920x1080";
@@ -18,22 +22,15 @@ public class PracticeFormWithPageObjects {
 
     @Test
     void fillFormTest() {
-        open("/automation-practice-form");
-        executeJavaScript("$('#fixedban').remove()");
-        executeJavaScript("$('footer').remove()");
+        String userName = "Andrey";
 
-        // Name
-        $("#firstName").setValue("Andrey");
-        $("#lastName").setValue("Mokeev");
+        registrationPage.openPage();
+        registrationPage.setFirstName(userName);
+        registrationPage.setLastName("Mokeev");
+        registrationPage.setUserEmail("mokeev_a@somemail.ru");
+        registrationPage.setGender("Male");
+        registrationPage.setPhoneNumber("9014045055");
 
-        // Email
-        $("#userEmail").setValue("mokeev_a@somemail.ru");
-
-        // Gender
-        $("#gender-radio-1").parent().click();
-
-        // Mobile
-        $("#userNumber").setValue("9014045055");
 
         // Date of Birth
         $("#dateOfBirthInput").click();
@@ -66,7 +63,7 @@ public class PracticeFormWithPageObjects {
         $("#submit").click();
         $(".modal-dialog").should(appear);
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-        $(".table-responsive").shouldHave(text("Andrey"), text("Mokeev"), text("mokeev_a@somemail.ru"), text("Male"),
+        $(".table-responsive").shouldHave(text(userName), text("Mokeev"), text("mokeev_a@somemail.ru"), text("Male"),
                 text("9014045055"), text("17 May,2008"), text("Maths"), text("Music"), text("0d6de7af1701b7f6ff551d4474ced401.jpeg"),
                 text("NY"), text("Haryana"), text("Panipat"));
     }
