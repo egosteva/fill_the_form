@@ -24,15 +24,10 @@ public class PracticeFormWithPageObjectsTest extends TestBase {
                 .setSubject("Computer Science")
                 .setHobby("Music")
                 .setCurrentAddress("NY")
+                .uploadPicture("0d6de7af1701b7f6ff551d4474ced401.jpeg")
                 .setState("Haryana")
-                .setCity("Panipat");
-
-        // Picture
-        $("#uploadPicture").uploadFromClasspath("img/0d6de7af1701b7f6ff551d4474ced401.jpeg");
-
-
-        // Submit
-        $("#submit").click();
+                .setCity("Panipat")
+                .submit();
 
         registrationPage.verifyResultsModalAppears()
                 .verifyResult("Student Name", userName +" Mokeev")

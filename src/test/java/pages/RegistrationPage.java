@@ -4,6 +4,8 @@ import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
 import pages.components.RegistrationResultsModal;
 
+import javax.swing.*;
+
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -23,9 +25,11 @@ public class RegistrationPage {
             subjectInput = $("#subjectsInput"),
             subjectDropdown = $(".subjects-auto-complete__menu"),
             hobbyChoice = $("#hobbiesWrapper"),
+            fileSelect = $("#uploadPicture"),
             currentAddressInput = $("#currentAddress"),
             stateChoice = $("#state"),
-            cityChoice = $("#city");
+            cityChoice = $("#city"),
+            submitButton = $("#submit");
 
 
     public RegistrationPage openPage() {
@@ -48,12 +52,6 @@ public class RegistrationPage {
 
         return this;
     }
-
-    //   public RegistrationPage clearLastName() {
-    //      lastNameInput.clear();
-    //
-    //       return this;
-    //  }
 
     public RegistrationPage setUserEmail(String value) {
         userEmailInput.setValue(value);
@@ -93,6 +91,13 @@ public class RegistrationPage {
         return this;
     }
 
+    public RegistrationPage uploadPicture(String value) {
+        fileSelect.uploadFromClasspath("img/" + value);
+
+        return this;
+    }
+
+
     public RegistrationPage setCurrentAddress(String value) {
         currentAddressInput.setValue(value);
 
@@ -122,6 +127,12 @@ public class RegistrationPage {
 
     public RegistrationPage verifyResult(String key, String value) {
         registrationResultsModal.verifyResult(key, value);
+
+        return this;
+    }
+
+    public RegistrationPage submit() {
+        submitButton.click();
 
         return this;
     }
