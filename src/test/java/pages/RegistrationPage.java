@@ -128,7 +128,6 @@ public class RegistrationPage {
         submitButton.click();
     }
 
-
     public RegistrationPage checkResultsModalAppears() {
         registrationResultsModalComponent.checkResultsModalAppears();
 
