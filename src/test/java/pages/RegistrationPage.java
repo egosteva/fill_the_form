@@ -14,8 +14,12 @@ import static com.codeborne.selenide.files.DownloadActions.click;
 public class RegistrationPage {
     CalendarComponent calendarComponent = new CalendarComponent();
     RegistrationResultsModal registrationResultsModal = new RegistrationResultsModal();
+    private final String PRACTICE_FORM_URL = "/automation-practice-form";
     private final String TITLE_TEXT = "Student Registration Form";
+    private final String FIXED_BAN_REMOVE_SCRIPT = "$('#fixedban').remove()";
+    private final String FOOTER_REMOVE_SCRIPT = "$('footer').remove()";
     private SelenideElement
+            registrationFormTitle = $(".practice-form-wrapper"),
             firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             userEmailInput = $("#userEmail"),
@@ -33,15 +37,15 @@ public class RegistrationPage {
 
 
     public RegistrationPage openPage() {
-        open("/automation-practice-form");
-        $(".practice-form-wrapper").shouldHave(text(TITLE_TEXT));
+        open(PRACTICE_FORM_URL);
+        registrationFormTitle.shouldHave(text(TITLE_TEXT));
 
         return this;
     }
 
     public RegistrationPage removeBanners() {
-        executeJavaScript("$('#fixedban').remove()");
-        executeJavaScript("$('footer').remove()");
+        executeJavaScript(FIXED_BAN_REMOVE_SCRIPT);
+        executeJavaScript(FOOTER_REMOVE_SCRIPT);
 
         return this;
     }
