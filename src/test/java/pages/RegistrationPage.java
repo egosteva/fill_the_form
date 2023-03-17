@@ -2,7 +2,7 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
-import pages.components.RegistrationResultsModal;
+import pages.components.RegistrationResultsModalComponent;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
     CalendarComponent calendarComponent = new CalendarComponent();
-    RegistrationResultsModal registrationResultsModal = new RegistrationResultsModal();
+    RegistrationResultsModalComponent registrationResultsModalComponent = new RegistrationResultsModalComponent();
     private final String PRACTICE_FORM_URL = "/automation-practice-form";
     private final String TITLE_TEXT = "Student Registration Form";
     private final String FIXED_BAN_REMOVE_SCRIPT = "$('#fixedban').remove()";
@@ -124,24 +124,22 @@ public class RegistrationPage {
         return this;
     }
 
-
-    public RegistrationPage verifyResultsModalAppears() {
-        registrationResultsModal.verifyModalAppears();
-
-        return this;
-    }
-
-    public RegistrationPage verifyResult(String key, String value) {
-        registrationResultsModal.verifyResult(key, value);
-
-        return this;
-    }
-
-    public RegistrationPage submit() {
+    public RegistrationPage clickSubmit() {
         submitButton.click();
 
         return this;
     }
 
 
+    public RegistrationPage checkResultsModalAppears() {
+        registrationResultsModalComponent.checkResultsModalAppears();
+
+        return this;
+    }
+
+    public RegistrationPage checkResult(String key, String value) {
+        registrationResultsModalComponent.checkResult(key, value);
+
+        return this;
+    }
 }

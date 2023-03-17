@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 public class PracticeFormWithPageObjectsTest extends TestBase {
 
     @Test
-    void fillFormTest() {
+    void fillTheFormTest() {
         String firstName = "Andrey";
         String lastName = "Mokeev";
         String email = "mokeev_a@somemail.ru";
@@ -18,7 +18,7 @@ public class PracticeFormWithPageObjectsTest extends TestBase {
         String subject2 = "Computer Science";
         String hobby = "Music";
         String currentAddress = "NY";
-        String imageName = "0d6de7af1701b7f6ff551d4474ced401.jpeg";
+        String imageName = "profile.jpeg";
         String state = "Haryana";
         String city = "Panipat";
 
@@ -33,21 +33,21 @@ public class PracticeFormWithPageObjectsTest extends TestBase {
                 .setSubject(subject1)
                 .setSubject(subject2)
                 .setHobby(hobby)
-                .setCurrentAddress(currentAddress)
                 .uploadPicture(imageName)
+                .setCurrentAddress(currentAddress)
                 .setState(state)
                 .setCity(city)
-                .submit();
+                .clickSubmit();
 
-        registrationPage.verifyResultsModalAppears()
-                .verifyResult("Student Name", firstName + " " + lastName)
-                .verifyResult("Student Email", email)
-                .verifyResult("Gender", gender)
-                .verifyResult("Date of Birth", dayOfBirth + " " + monthOfBirth + "," + yearOfBirth)
-                .verifyResult("Subjects", subject1 + ", " + subject2)
-                .verifyResult("Hobbies", hobby)
-                .verifyResult("Picture", imageName)
-                .verifyResult("Address", currentAddress)
-                .verifyResult("State and City", state + " " + city);
+        registrationPage.checkResultsModalAppears()
+                .checkResult("Student Name", firstName + " " + lastName)
+                .checkResult("Student Email", email)
+                .checkResult("Gender", gender)
+                .checkResult("Date of Birth", dayOfBirth + " " + monthOfBirth + "," + yearOfBirth)
+                .checkResult("Subjects", subject1 + ", " + subject2)
+                .checkResult("Hobbies", hobby)
+                .checkResult("Picture", imageName)
+                .checkResult("Address", currentAddress)
+                .checkResult("State and City", state + " " + city);
     }
 }

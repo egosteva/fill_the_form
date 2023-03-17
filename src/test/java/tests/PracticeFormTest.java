@@ -51,7 +51,7 @@ public class PracticeFormTest {
         $("#hobbies-checkbox-3").parent().click();
 
         // Picture
-        $("#uploadPicture").uploadFromClasspath("img/0d6de7af1701b7f6ff551d4474ced401.jpeg");
+        $("#uploadPicture").uploadFromClasspath("img/profile.jpeg");
 
         //  Current Address
         $("#currentAddress").setValue("NY");
@@ -67,7 +67,7 @@ public class PracticeFormTest {
         $(".modal-dialog").should(appear);
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $(".table-responsive").shouldHave(text("Andrey"), text("Mokeev"), text("mokeev_a@somemail.ru"), text("Male"),
-                text("9014045055"), text("17 May,2008"), text("Maths"), text("Music"), text("0d6de7af1701b7f6ff551d4474ced401.jpeg"),
+                text("9014045055"), text("17 May,2008"), text("Maths"), text("Music"), text("profile.jpeg"),
                 text("NY"), text("Haryana"), text("Panipat"));
     }
 }
