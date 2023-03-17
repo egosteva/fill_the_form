@@ -11,33 +11,47 @@ public class PracticeFormWithPageObjectsTest extends TestBase {
 
     @Test
     void fillFormTest() {
-        String userName = "Andrey";
+        String firstName = "Andrey";
+        String lastName = "Mokeev";
+        String email = "mokeev_a@somemail.ru";
+        String gender = "Male";
+        String phone = "9014045055";
+        String dayOfBirth = "17";
+        String monthOfBirth = "4";
+        String yearOfBirth = "2008";
+        String subject1 = "Maths";
+        String subject2 = "Computer Science";
+        String hobby = "Music";
+        String currentAddress = "NY";
+        String imageName = "0d6de7af1701b7f6ff551d4474ced401.jpeg";
+        String state = "Haryana";
+        String city = "Panipat";
 
         registrationPage.openPage()
-                .setFirstName(userName)
-                .setLastName("Mokeev")
-                .setUserEmail("mokeev_a@somemail.ru")
-                .setGender("Male")
-                .setPhoneNumber("9014045055")
-                .setBirthDate("17", "4", "2008")
-                .setSubject("Maths")
-                .setSubject("Computer Science")
-                .setHobby("Music")
-                .setCurrentAddress("NY")
-                .uploadPicture("0d6de7af1701b7f6ff551d4474ced401.jpeg")
-                .setState("Haryana")
-                .setCity("Panipat")
+                .setFirstName(firstName)
+                .setLastName(lastName)
+                .setUserEmail(email)
+                .setGender(gender)
+                .setPhoneNumber(phone)
+                .setBirthDate(dayOfBirth, monthOfBirth, yearOfBirth)
+                .setSubject(subject1)
+                .setSubject(subject2)
+                .setHobby(hobby)
+                .setCurrentAddress(currentAddress)
+                .uploadPicture(imageName)
+                .setState(state)
+                .setCity(city)
                 .submit();
 
         registrationPage.verifyResultsModalAppears()
-                .verifyResult("Student Name", userName +" Mokeev")
-                .verifyResult("Student Email", "mokeev_a@somemail.ru")
-                .verifyResult("Gender", "Male")
-                .verifyResult("Date of Birth", "17 May,2008")
-                .verifyResult("Subjects", "Maths, Computer Science")
-                .verifyResult("Hobbies", "Music")
-                .verifyResult("Picture", "0d6de7af1701b7f6ff551d4474ced401.jpeg")
-                .verifyResult("Address", "NY")
-                .verifyResult("State and City", "Haryana Panipat");
+                .verifyResult("Student Name", firstName + " " + lastName)
+                .verifyResult("Student Email", email)
+                .verifyResult("Gender", gender)
+                .verifyResult("Date of Birth", dayOfBirth + " " + monthOfBirth + "," + yearOfBirth)
+                .verifyResult("Subjects", subject1 + ", " + subject2)
+                .verifyResult("Hobbies", hobby)
+                .verifyResult("Picture", imageName)
+                .verifyResult("Address", currentAddress)
+                .verifyResult("State and City", state + " " + city);
     }
 }
