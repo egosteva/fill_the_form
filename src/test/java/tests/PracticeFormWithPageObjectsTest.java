@@ -19,15 +19,10 @@ public class PracticeFormWithPageObjectsTest extends TestBase {
                 .setUserEmail("mokeev_a@somemail.ru")
                 .setGender("Male")
                 .setPhoneNumber("9014045055")
-                .setBirthDate("17", "4", "2008");
-
-
-        // Subjects
-        $("#subjectsInput").setValue("Mat");
-        $(byText("Maths")).click();
-
-        // Hobbies
-        $("#hobbies-checkbox-3").parent().click();
+                .setBirthDate("17", "4", "2008")
+                .setSubject("Maths")
+                .setSubject("Computer Science")
+                .setHobby("Music");
 
         // Picture
         $("#uploadPicture").uploadFromClasspath("img/0d6de7af1701b7f6ff551d4474ced401.jpeg");
@@ -49,7 +44,7 @@ public class PracticeFormWithPageObjectsTest extends TestBase {
                 .verifyResult("Student Email", "mokeev_a@somemail.ru")
                 .verifyResult("Gender", "Male")
                 .verifyResult("Date of Birth", "17 May,2008")
-                .verifyResult("Subjects", "Maths")
+                .verifyResult("Subjects", "Maths, Computer Science")
                 .verifyResult("Hobbies", "Music")
                 .verifyResult("Picture", "0d6de7af1701b7f6ff551d4474ced401.jpeg")
                 .verifyResult("Address", "NY")

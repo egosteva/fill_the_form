@@ -4,9 +4,10 @@ import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
 import pages.components.RegistrationResultsModal;
 
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.files.DownloadActions.click;
 
 public class RegistrationPage {
     CalendarComponent calendarComponent = new CalendarComponent();
@@ -18,7 +19,10 @@ public class RegistrationPage {
             userEmailInput = $("#userEmail"),
             genderChoice = $("#genterWrapper"),
             phoneNumberInput = $("#userNumber"),
-            dateOfBirthInput = $("#dateOfBirthInput");
+            dateOfBirthInput = $("#dateOfBirthInput"),
+            subjectInput = $("#subjectsInput"),
+            subjectDropdown = $(".subjects-auto-complete__menu"),
+            hobbyChoice = $("#hobbiesWrapper");
 
 
     public RegistrationPage openPage() {
@@ -42,11 +46,11 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage clearLastName() {
-        lastNameInput.clear();
-
-        return this;
-    }
+    //   public RegistrationPage clearLastName() {
+    //      lastNameInput.clear();
+    //
+    //       return this;
+    //  }
 
     public RegistrationPage setUserEmail(String value) {
         userEmailInput.setValue(value);
@@ -72,6 +76,20 @@ public class RegistrationPage {
 
         return this;
     }
+
+    public RegistrationPage setSubject(String value) {
+        subjectInput.setValue(value);
+        subjectDropdown.$(byText(value)).click();
+
+        return this;
+    }
+
+    public RegistrationPage setHobby(String value) {
+        hobbyChoice.$(byText(value)).click();
+
+        return this;
+    }
+
 
     public RegistrationPage verifyResultsModalAppears() {
         registrationResultsModal.verifyModalAppears();
