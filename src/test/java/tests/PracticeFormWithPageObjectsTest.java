@@ -22,19 +22,14 @@ public class PracticeFormWithPageObjectsTest extends TestBase {
                 .setBirthDate("17", "4", "2008")
                 .setSubject("Maths")
                 .setSubject("Computer Science")
-                .setHobby("Music");
+                .setHobby("Music")
+                .setCurrentAddress("NY")
+                .setState("Haryana")
+                .setCity("Panipat");
 
         // Picture
         $("#uploadPicture").uploadFromClasspath("img/0d6de7af1701b7f6ff551d4474ced401.jpeg");
 
-        //  Current Address
-        $("#currentAddress").setValue("NY");
-
-        // State and City
-        $("#state").click();
-        $(byText("Haryana")).click();
-        $("#city").click();
-        $(byText("Panipat")).click();
 
         // Submit
         $("#submit").click();

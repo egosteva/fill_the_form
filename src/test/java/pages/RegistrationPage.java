@@ -22,7 +22,10 @@ public class RegistrationPage {
             dateOfBirthInput = $("#dateOfBirthInput"),
             subjectInput = $("#subjectsInput"),
             subjectDropdown = $(".subjects-auto-complete__menu"),
-            hobbyChoice = $("#hobbiesWrapper");
+            hobbyChoice = $("#hobbiesWrapper"),
+            currentAddressInput = $("#currentAddress"),
+            stateChoice = $("#state"),
+            cityChoice = $("#city");
 
 
     public RegistrationPage openPage() {
@@ -86,6 +89,26 @@ public class RegistrationPage {
 
     public RegistrationPage setHobby(String value) {
         hobbyChoice.$(byText(value)).click();
+
+        return this;
+    }
+
+    public RegistrationPage setCurrentAddress(String value) {
+        currentAddressInput.setValue(value);
+
+        return this;
+    }
+
+    public RegistrationPage setState(String value) {
+        stateChoice.click();
+        $(byText(value)).click();
+
+        return this;
+    }
+
+    public RegistrationPage setCity(String value) {
+        cityChoice.click();
+        $(byText(value)).click();
 
         return this;
     }
