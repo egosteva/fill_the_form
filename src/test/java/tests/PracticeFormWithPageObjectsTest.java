@@ -7,7 +7,7 @@ public class PracticeFormWithPageObjectsTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
-    void fillTheFormTest() {
+    void fillThePracticeFormTest() {
         String firstName = "Andrey";
         String lastName = "Mokeev";
         String email = "mokeev_a@somemail.ru";
