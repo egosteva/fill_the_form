@@ -15,7 +15,7 @@ public class RegistrationPage {
     private final String TITLE_TEXT = "Student Registration Form";
     private final String FIXED_BAN_REMOVE_SCRIPT = "$('#fixedban').remove()";
     private final String FOOTER_REMOVE_SCRIPT = "$('footer').remove()";
-    private SelenideElement
+    private final SelenideElement
             registrationFormTitle = $(".practice-form-wrapper"),
             firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
@@ -124,10 +124,8 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage clickSubmit() {
+    public void clickSubmit() {
         submitButton.click();
-
-        return this;
     }
 
 
