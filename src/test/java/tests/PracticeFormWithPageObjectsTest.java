@@ -1,8 +1,10 @@
 package tests;
 
 import org.junit.jupiter.api.Test;
+import pages.RegistrationPage;
 
 public class PracticeFormWithPageObjectsTest extends TestBase {
+    RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
     void fillTheFormTest() {
