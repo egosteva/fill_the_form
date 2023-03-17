@@ -28,6 +28,7 @@ public class PracticeFormWithPageObjectsTest extends TestBase {
         String city = "Panipat";
 
         registrationPage.openPage()
+                .removeBanners()
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setUserEmail(email)
