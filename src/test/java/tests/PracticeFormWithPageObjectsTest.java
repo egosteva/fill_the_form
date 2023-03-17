@@ -17,7 +17,7 @@ public class PracticeFormWithPageObjectsTest extends TestBase {
         String gender = "Male";
         String phone = "9014045055";
         String dayOfBirth = "17";
-        String monthOfBirth = "4";
+        String monthOfBirth = "May";
         String yearOfBirth = "2008";
         String subject1 = "Maths";
         String subject2 = "Computer Science";
