@@ -1,16 +1,34 @@
 package tests;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
+
+import static tests.TestData.*;
 
 public class PracticeFormWithPageObjectsTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
+    //   String firstName = "Andrey",
+    //           lastName = "Mokeev",
+    //           email = "mokeev_a@somemail.ru";
+
+//    static String firstName,
+//            lastName,
+//            email;
+
+    @BeforeEach
+    void prepareTestData() {
+  //      firstName = "Andrey";
+  //      lastName = "Mokeev";
+  //      email = "mokeev_a@somemail.ru";
+    }
+
     @Test
     void fillPracticeFormTest() {
-        String firstName = "Andrey";
-        String lastName = "Mokeev";
-        String email = "mokeev_a@somemail.ru";
+        //   String firstName = "Andrey";
+        //   String lastName = "Mokeev";
+        //   String email = "mokeev_a@somemail.ru";
         String gender = "Male";
         String phone = "9014045055";
         String dayOfBirth = "17";
@@ -27,7 +45,7 @@ public class PracticeFormWithPageObjectsTest extends TestBase {
         registrationPage.openPage()
                 .removeBanners()
                 .setFirstName(firstName)
-                .setLastName(lastName)
+                .setLastName(TestData.lastName)
                 .setUserEmail(email)
                 .setGender(gender)
                 .setPhoneNumber(phone)
