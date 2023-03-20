@@ -5,8 +5,7 @@ import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
 import static tests.TestData.*;
-import static utils.RandomUtils.getRandomEmail;
-import static utils.RandomUtils.getRandomString;
+import static utils.RandomUtils.*;
 
 public class PracticeFormWithRandomUtilsTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
@@ -23,11 +22,13 @@ public class PracticeFormWithRandomUtilsTest extends TestBase {
         //   String firstName = "Andrey";
         //   String lastName = "Mokeev";
         //   String email = "mokeev_a@somemail.ru";
+        String[] genders = {"Male", "Female", "Other"};
         String firstName = getRandomString(10),
                 lastName = getRandomString(10),
-                email = getRandomEmail();
+                email = getRandomEmail(),
+        gender = getRandomItemFromArray(genders);
 
-        String gender = "Male";
+     //   String gender = "Male";
         String phone = "9014045055";
         String dayOfBirth = "17";
         String monthOfBirth = "May";
