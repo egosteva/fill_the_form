@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
 import static tests.TestData.*;
+import static utils.RandomUtils.getRandomEmail;
 import static utils.RandomUtils.getRandomString;
 
 public class PracticeFormWithRandomUtilsTest extends TestBase {
@@ -24,7 +25,7 @@ public class PracticeFormWithRandomUtilsTest extends TestBase {
         //   String email = "mokeev_a@somemail.ru";
         String firstName = getRandomString(10),
                 lastName = getRandomString(10),
-                email = "mokeev_a@somemail.ru";
+                email = getRandomEmail();
 
         String gender = "Male";
         String phone = "9014045055";
