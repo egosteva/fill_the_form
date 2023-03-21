@@ -1,21 +1,13 @@
 package tests;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
-import static tests.StaticTestData.*;
+import static tests.TestData.*;
 
 public class PracticeFormWithPageObjectsStaticDataTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
-
-    @BeforeEach
-    void prepareTestData() {
-        //      firstName = "Andrey";
-        //      lastName = "Mokeev";
-        //      email = "mokeev_a@somemail.ru";
-    }
 
     @Test
     void fillPracticeFormTest() {

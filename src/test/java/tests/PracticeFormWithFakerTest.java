@@ -36,7 +36,7 @@ public class PracticeFormWithFakerTest extends TestBase {
         registrationPage.openPage()
                 .removeBanners()
                 .setFirstName(firstName)
-                .setLastName(StaticTestData.lastName)
+                .setLastName(lastName)
                 .setUserEmail(email)
                 .setGender(gender)
                 .setPhoneNumber(phone)
