@@ -6,46 +6,23 @@ import pages.RegistrationPage;
 
 import static tests.TestData.*;
 
-public class PracticeFormWithPageObjectsTest extends TestBase {
+public class PracticeFormWithPageObjectsStaticDataTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
-    //   String firstName = "Andrey",
-    //           lastName = "Mokeev",
-    //           email = "mokeev_a@somemail.ru";
-
-//    static String firstName,
-//            lastName,
-//            email;
 
     @BeforeEach
     void prepareTestData() {
-  //      firstName = "Andrey";
-  //      lastName = "Mokeev";
-  //      email = "mokeev_a@somemail.ru";
+        //      firstName = "Andrey";
+        //      lastName = "Mokeev";
+        //      email = "mokeev_a@somemail.ru";
     }
 
     @Test
     void fillPracticeFormTest() {
-        //   String firstName = "Andrey";
-        //   String lastName = "Mokeev";
-        //   String email = "mokeev_a@somemail.ru";
-        String gender = "Male";
-        String phone = "9014045055";
-        String dayOfBirth = "17";
-        String monthOfBirth = "May";
-        String yearOfBirth = "2008";
-        String subject1 = "Maths";
-        String subject2 = "Computer Science";
-        String hobby = "Music";
-        String currentAddress = "NY";
-        String imageName = "profile.jpeg";
-        String state = "Haryana";
-        String city = "Panipat";
-
         registrationPage.openPage()
                 .removeBanners()
                 .setFirstName(firstName)
-                .setLastName(TestData.lastName)
+                .setLastName(lastName)
                 .setUserEmail(email)
                 .setGender(gender)
                 .setPhoneNumber(phone)
