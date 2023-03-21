@@ -5,15 +5,12 @@ import pages.RegistrationPage;
 
 import static tests.DynamicTestData.*;
 
+
 public class PracticeFormWithPageObjectsDynamicDataTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
     void fillPracticeFormTest() {
-        String imageName = "profile.jpeg",
-                state = "Haryana",
-                city = "Panipat";
-
         registrationPage.openPage()
                 .removeBanners()
                 .setFirstName(firstName)
@@ -22,8 +19,7 @@ public class PracticeFormWithPageObjectsDynamicDataTest extends TestBase {
                 .setGender(gender)
                 .setPhoneNumber(phone)
                 .setBirthDate(dayOfBirth, monthOfBirth, yearOfBirth)
-                .setSubject(subject1)
-                .setSubject(subject2)
+                .setSubject(subject)
                 .setHobby(hobby)
                 .uploadPicture(imageName)
                 .setCurrentAddress(currentAddress)
@@ -36,7 +32,7 @@ public class PracticeFormWithPageObjectsDynamicDataTest extends TestBase {
                 .checkResult("Student Email", email)
                 .checkResult("Gender", gender)
                 .checkResult("Date of Birth", dayOfBirth + " " + monthOfBirth + "," + yearOfBirth)
-                .checkResult("Subjects", subject1 + ", " + subject2)
+                .checkResult("Subjects", subject)
                 .checkResult("Hobbies", hobby)
                 .checkResult("Picture", imageName)
                 .checkResult("Address", currentAddress)
