@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Map;
 
-public class RandomTestData {
+public class RandomRegistrationTestData {
     public static Faker faker = new Faker(new Locale("ru"));
     public static String firstName = faker.name().firstName(),
             lastName = faker.name().lastName(),

@@ -3,7 +3,7 @@ package tests;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
-import static tests.RandomTestData.*;
+import static tests.RandomRegistrationTestData.*;
 
 
 public class PracticeFormWithPageObjectsRandomDataTest extends TestBase {
