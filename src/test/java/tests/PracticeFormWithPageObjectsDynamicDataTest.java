@@ -10,10 +10,11 @@ public class PracticeFormWithPageObjectsDynamicDataTest extends TestBase {
 
     @Test
     void fillPracticeFormTest() {
+        String[] genders = {"Male", "Female", "Other"};
         String firstName = getRandomString(10),
                 lastName = getRandomString(10),
                 email = getRandomEmail(),
-                gender = getRandomGender();
+                gender = getRandomItemFromArray(genders);
 
         String phone = "9014045055";
         String dayOfBirth = "17";

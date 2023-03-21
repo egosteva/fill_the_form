@@ -44,10 +44,10 @@ public class RandomUtils {
         return values[index];
     }
 
-    public static String getRandomGender() {
-        String[] genders = {"Male", "Female", "Other"};
-        return getRandomItemFromArray(genders);
-    }
+    //      public static String getRandomGender() {
+    //    String[] genders = {"Male", "Female", "Other"};
+    //    return getRandomItemFromArray(genders);
+   // }
 
     //   public static String getRandomName() {
     //       Faker faker = new Faker(new Locale("en"));
