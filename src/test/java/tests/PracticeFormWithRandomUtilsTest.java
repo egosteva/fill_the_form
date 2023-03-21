@@ -1,35 +1,40 @@
 package tests;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
-import static utils.DynamicDataUtils.*;
+import static tests.TestData.*;
+import static utils.RandomUtils.*;
 
 public class PracticeFormWithRandomUtilsTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
+
     @Test
     void fillPracticeFormTest() {
         String[] genders = {"Male", "Female", "Other"};
-        String[] hobbies = {"Sports", "Reading", "Music"};
-        String[] subjects =  {"Maths", "Computer Science", "History", "English", "Arts", "Biology", "Hindi"};
-        String firstName = getRandomFirstName(),
-                lastName = getRandomLastName(),
+        String firstName = getRandomString(10),
+                lastName = getRandomString(10),
                 email = getRandomEmail(),
-                gender = getRandomItemFromArray(genders),
-                phone = getRandomPhone(),
-                subject1 = getRandomItemFromArray(subjects),
-                subject2 = getRandomItemFromArray(subjects),
-                hobby = getRandomItemFromArray(hobbies),
-                currentAddress = getRandomAddress(),
-                imageName = "profile.jpeg",
-                state = "Haryana",
-                city = "Panipat";
+                gender = getRandomItemFromArray(genders);
+
+        String phone = "9014045055";
+        String dayOfBirth = "17";
+        String monthOfBirth = "May";
+        String yearOfBirth = "2008";
+        String subject1 = "Maths";
+        String subject2 = "Computer Science";
+        String hobby = "Music";
+        String currentAddress = "NY";
+        String imageName = "profile.jpeg";
+        String state = "Haryana";
+        String city = "Panipat";
 
         registrationPage.openPage()
                 .removeBanners()
                 .setFirstName(firstName)
-                .setLastName(lastName)
+                .setLastName(TestData.lastName)
                 .setUserEmail(email)
                 .setGender(gender)
                 .setPhoneNumber(phone)

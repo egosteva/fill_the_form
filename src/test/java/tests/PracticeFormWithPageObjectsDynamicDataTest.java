@@ -3,7 +3,7 @@ package tests;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
-import static utils.RandomUtils.*;
+import static tests.DynamicTestData.*;
 
 public class PracticeFormWithPageObjectsDynamicDataTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
@@ -11,22 +11,20 @@ public class PracticeFormWithPageObjectsDynamicDataTest extends TestBase {
     @Test
     void fillPracticeFormTest() {
         String[] genders = {"Male", "Female", "Other"};
-        String firstName = getRandomString(10),
-                lastName = getRandomString(10),
+        String[] hobbies = {"Sports", "Reading", "Music"};
+        String[] subjects =  {"Maths", "Computer Science", "History", "English", "Arts", "Biology", "Hindi"};
+        String firstName = getRandomFirstName(),
+                lastName = getRandomLastName(),
                 email = getRandomEmail(),
-                gender = getRandomItemFromArray(genders);
-
-        String phone = "9014045055";
-        String dayOfBirth = "17";
-        String monthOfBirth = "May";
-        String yearOfBirth = "2008";
-        String subject1 = "Maths";
-        String subject2 = "Computer Science";
-        String hobby = "Music";
-        String currentAddress = "NY";
-        String imageName = "profile.jpeg";
-        String state = "Haryana";
-        String city = "Panipat";
+                gender = getRandomItemFromArray(genders),
+                phone = getRandomPhone(),
+                subject1 = getRandomItemFromArray(subjects),
+                subject2 = getRandomItemFromArray(subjects),
+                hobby = getRandomItemFromArray(hobbies),
+                currentAddress = getRandomAddress(),
+                imageName = "profile.jpeg",
+                state = "Haryana",
+                city = "Panipat";
 
         registrationPage.openPage()
                 .removeBanners()
