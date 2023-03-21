@@ -8,7 +8,7 @@ import java.util.Locale;
 import java.util.Map;
 
 public class RandomRegistrationTestData {
-    public static Faker faker = new Faker(new Locale("ru"));
+    public static Faker faker = new Faker(new Locale("en"));
     public static String firstName = faker.name().firstName(),
             lastName = faker.name().lastName(),
             email = faker.internet().emailAddress(),
@@ -18,14 +18,13 @@ public class RandomRegistrationTestData {
             imageName = "profile.jpeg",
             currentAddress = faker.address().fullAddress();
 
-    static String phoneNumberWithSymbols = faker.phoneNumber().phoneNumber();
+    static String phoneNumberWithSymbols = new Faker(new Locale("ru")).phoneNumber().phoneNumber();
     public static String phone = phoneNumberWithSymbols.replaceAll("[^\\d]", "").substring(1);
 
     static Date randomDateOfBirth = new Faker().date().birthday();
     public static String dayOfBirth = new SimpleDateFormat("d").format(randomDateOfBirth),
             monthOfBirth = new SimpleDateFormat("MMMM", Locale.ENGLISH).format(randomDateOfBirth),
             yearOfBirth = new SimpleDateFormat("yyyy").format(randomDateOfBirth);
-
 
     static Map<String, String[]> mapStateAndCity = Map.of(
             "NCR", new String[]{"Delhi", "Gurgaon", "Noida"},
