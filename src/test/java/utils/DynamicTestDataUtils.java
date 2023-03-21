@@ -3,10 +3,9 @@ package utils;
 import com.github.javafaker.Faker;
 
 import java.security.SecureRandom;
-import java.util.Locale;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class RandomUtils {
+public class DynamicTestDataUtils {
     public static void main(String[] args) {
         System.out.println(getRandomString(10));
         System.out.println(getRandomInt(1, 10));

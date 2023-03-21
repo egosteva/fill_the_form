@@ -1,34 +1,20 @@
 package tests;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
-import static tests.TestData.*;
 import static utils.RandomUtils.*;
 
 public class PracticeFormWithRandomUtilsTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
-    //    @BeforeEach
-    //   void prepareTestData() {
-    //       String firstName = getRandomString(10),
-    //      lastName = getRandomString(10),
-    //     email = getRandomString(10);
-    //   }
-
     @Test
     void fillPracticeFormTest() {
-        //   String firstName = "Andrey";
-        //   String lastName = "Mokeev";
-        //   String email = "mokeev_a@somemail.ru";
-        String[] genders = {"Male", "Female", "Other"};
         String firstName = getRandomString(10),
                 lastName = getRandomString(10),
                 email = getRandomEmail(),
-        gender = getRandomItemFromArray(genders);
+                gender = getRandomGender();
 
-     //   String gender = "Male";
         String phone = "9014045055";
         String dayOfBirth = "17";
         String monthOfBirth = "May";
@@ -44,7 +30,7 @@ public class PracticeFormWithRandomUtilsTest extends TestBase {
         registrationPage.openPage()
                 .removeBanners()
                 .setFirstName(firstName)
-                .setLastName(TestData.lastName)
+                .setLastName(lastName)
                 .setUserEmail(email)
                 .setGender(gender)
                 .setPhoneNumber(phone)

@@ -4,7 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
-import static tests.TestData.*;
+import static tests.StaticTestData.*;
 
 public class PracticeFormWithPageObjectsStaticDataTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
