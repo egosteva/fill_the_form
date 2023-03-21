@@ -3,10 +3,10 @@ package tests;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
-import static tests.DynamicTestData.*;
+import static tests.RandomTestData.*;
 
 
-public class PracticeFormWithPageObjectsDynamicDataTest extends TestBase {
+public class PracticeFormWithPageObjectsRandomDataTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
