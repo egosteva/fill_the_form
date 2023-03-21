@@ -12,13 +12,14 @@ public class PracticeFormWithRandomUtilsTest extends TestBase {
     void fillPracticeFormTest() {
         String[] genders = {"Male", "Female", "Other"};
         String[] hobbies = {"Sports", "Reading", "Music"};
+        String[] subjects =  {"Maths", "Computer Science", "History", "English", "Arts", "Biology", "Hindi"};
         String firstName = getRandomFirstName(),
                 lastName = getRandomLastName(),
                 email = getRandomEmail(),
                 gender = getRandomItemFromArray(genders),
                 phone = getRandomPhone(),
-                subject1 = "Maths",
-                subject2 = "Computer Science",
+                subject1 = getRandomItemFromArray(subjects),
+                subject2 = getRandomItemFromArray(subjects),
                 hobby = getRandomItemFromArray(hobbies),
                 currentAddress = getRandomAddress(),
                 imageName = "profile.jpeg",
