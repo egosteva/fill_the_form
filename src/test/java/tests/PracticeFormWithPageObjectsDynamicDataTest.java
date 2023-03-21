@@ -10,19 +10,7 @@ public class PracticeFormWithPageObjectsDynamicDataTest extends TestBase {
 
     @Test
     void fillPracticeFormTest() {
-        String[] genders = {"Male", "Female", "Other"};
-        String[] hobbies = {"Sports", "Reading", "Music"};
-        String[] subjects =  {"Maths", "Computer Science", "History", "English", "Arts", "Biology", "Hindi"};
-        String firstName = getRandomFirstName(),
-                lastName = getRandomLastName(),
-                email = getRandomEmail(),
-                gender = getRandomItemFromArray(genders),
-                phone = getRandomPhone(),
-                subject1 = getRandomItemFromArray(subjects),
-                subject2 = getRandomItemFromArray(subjects),
-                hobby = getRandomItemFromArray(hobbies),
-                currentAddress = getRandomAddress(),
-                imageName = "profile.jpeg",
+        String imageName = "profile.jpeg",
                 state = "Haryana",
                 city = "Panipat";
 

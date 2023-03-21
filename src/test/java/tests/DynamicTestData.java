@@ -7,60 +7,38 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.concurrent.ThreadLocalRandom;
 
+import static utils.RandomUtils.getRandomItemFromArray;
+
 public class DynamicTestData {
-    public static void main(String[] args) {
-        String[] genders = {"Male", "Female", "Other"};
-        System.out.println(getRandomItemFromArray(genders));
-        System.out.println(getRandomFirstName());
-        System.out.println(getRandomLastName());
-        System.out.println(getRandomEmail());
-        System.out.println(getRandomPhone());
-
-        Date fakerDateOfBirthday = new Faker(new Locale("en")).date().birthday();
-
-        String dayOfBirth = new SimpleDateFormat("d").format(fakerDateOfBirthday);
-        String monthOfBirth = new SimpleDateFormat("MMMM").format(fakerDateOfBirthday);
-        String yearOfBirth = new SimpleDateFormat("yyyy").format(fakerDateOfBirthday);
-        System.out.println(dayOfBirth + monthOfBirth + yearOfBirth);
-    }
+    //   public static void main(String[] args) {
+    //   String[] genders = {"Male", "Female", "Other"};
+    //    Date fakerDateOfBirthday = new Faker(new Locale("en")).date().birthday();
+    //   String dayOfBirth = new SimpleDateFormat("d").format(fakerDateOfBirthday);
+    //   String monthOfBirth = new SimpleDateFormat("MMMM").format(fakerDateOfBirthday);
+    //   String yearOfBirth = new SimpleDateFormat("yyyy").format(fakerDateOfBirthday);
+    //   System.out.println(dayOfBirth + monthOfBirth + yearOfBirth);
 
 
-    public static int getRandomInt(int min, int max) {
-        return ThreadLocalRandom.current().nextInt(min, max + 1);
-    }
+    public static String[] genders = {"Male", "Female", "Other"};
+    public static String[] hobbies = {"Sports", "Reading", "Music"};
+    public static String[] subjects = {"Maths", "Computer Science", "History", "English", "Arts", "Biology", "Hindi"};
 
-    public static String getRandomItemFromArray(String[] values) {
-        int index = getRandomInt(0, values.length - 1);
 
-        return values[index];
-    }
+    public static String firstName = new Faker(new Locale("en")).name().firstName(),
+            lastName = new Faker(new Locale("en")).name().lastName(),
+            email = new Faker().internet().emailAddress(),
+            gender = getRandomItemFromArray(genders);
 
-    public static String getRandomFirstName() {
-        return new Faker(new Locale("en")).name().firstName();
-    }
+    static String phoneNumberWithSymbols = new Faker(new Locale("ru")).phoneNumber().phoneNumber();
+    public static String phone = phoneNumberWithSymbols.replaceAll("[^\\d]", "").substring(1);
 
-    public static String getRandomLastName() {
-        return new Faker(new Locale("en")).name().lastName();
-    }
-
-    public static String getRandomEmail() {
-        return new Faker().internet().emailAddress();
-    }
-
-    public static String getRandomPhone() {
-        String phoneNumberWithSymbol = new Faker(new Locale("ru")).phoneNumber().phoneNumber();
-
-        return phoneNumberWithSymbol.replaceAll("[^\\d]", "").substring(1);
-    }
-
-    public static String getRandomAddress() {
-        return new Faker(new Locale("en")).address().fullAddress();
-    }
+    public static String subject1 = getRandomItemFromArray(subjects),
+            subject2 = getRandomItemFromArray(subjects),
+            hobby = getRandomItemFromArray(hobbies),
+            currentAddress = new Faker(new Locale("en")).address().fullAddress();
 
     static Date randomDateOfBirth = new Faker().date().birthday();
     public static String dayOfBirth = new SimpleDateFormat("d").format(randomDateOfBirth),
             monthOfBirth = new SimpleDateFormat("MMMM", Locale.ENGLISH).format(randomDateOfBirth),
             yearOfBirth = new SimpleDateFormat("yyyy").format(randomDateOfBirth);
-
-
 }
