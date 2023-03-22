@@ -31,7 +31,7 @@ public class PracticeFormWithRandomUtilsTest extends TestBase {
         registrationPage.openPage()
                 .removeBanners()
                 .setFirstName(firstName)
-                .setLastName(TestData.lastName)
+                .setLastName(lastName)
                 .setUserEmail(email)
                 .setGender(gender)
                 .setPhoneNumber(phone)
