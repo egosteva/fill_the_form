@@ -33,6 +33,4 @@ public class JUnitExamples {
     void secondTest(){
         System.out.println("        Here is secondTest()");
     }
-
-
 }

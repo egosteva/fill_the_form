@@ -32,7 +32,6 @@ public class RegistrationPage {
             cityChoice = $("#city"),
             submitButton = $("#submit");
 
-
     public RegistrationPage openPage() {
         open(PRACTICE_FORM_URL);
         registrationFormTitle.shouldHave(text(TITLE_TEXT));
@@ -102,7 +101,6 @@ public class RegistrationPage {
 
         return this;
     }
-
 
     public RegistrationPage setCurrentAddress(String value) {
         currentAddressInput.setValue(value);

@@ -3,15 +3,19 @@ package tests;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
-public class PracticeFormWithPageObjectsTest extends TestBase {
+import static utils.RandomUtils.*;
+
+public class PracticeFormWithRandomUtilsTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
     void fillPracticeFormTest() {
-        String firstName = "Andrey";
-        String lastName = "Mokeev";
-        String email = "mokeev_a@somemail.ru";
-        String gender = "Male";
+        String[] genders = {"Male", "Female", "Other"};
+        String firstName = getRandomString(10),
+                lastName = getRandomString(10),
+                email = getRandomEmail(),
+                gender = getRandomItemFromArray(genders);
+
         String phone = "9014045055";
         String dayOfBirth = "17";
         String monthOfBirth = "May";
