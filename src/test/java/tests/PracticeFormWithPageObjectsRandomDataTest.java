@@ -5,7 +5,6 @@ import pages.RegistrationPage;
 
 import static tests.RandomRegistrationTestData.*;
 
-
 public class PracticeFormWithPageObjectsRandomDataTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 

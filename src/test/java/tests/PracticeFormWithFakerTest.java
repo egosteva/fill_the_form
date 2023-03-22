@@ -8,8 +8,7 @@ import java.util.Locale;
 
 public class PracticeFormWithFakerTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
-
-
+    
     @Test
     void fillPracticeFormTest() {
         Faker faker = new Faker(new Locale("en"));
@@ -19,16 +18,13 @@ public class PracticeFormWithFakerTest extends TestBase {
                 currentAddress = faker.address().fullAddress(),
                 phone = "+7" + faker.number().numberBetween(100000, 99999);
 
-
         String gender = "Male";
-    //    String phone = "9014045055";
         String dayOfBirth = "17";
         String monthOfBirth = "May";
         String yearOfBirth = "2008";
         String subject1 = "Maths";
         String subject2 = "Computer Science";
         String hobby = "Music";
-     //   String currentAddress = "NY";
         String imageName = "profile.jpeg";
         String state = "Haryana";
         String city = "Panipat";

@@ -8,7 +8,6 @@ import static tests.TestData.*;
 public class PracticeFormWithPageObjectsStaticDataTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
-
     @Test
     void fillPracticeFormTest() {
         registrationPage.openPage()

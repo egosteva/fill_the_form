@@ -1,15 +1,12 @@
 package tests;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
-import static tests.TestData.*;
 import static utils.RandomUtils.*;
 
 public class PracticeFormWithRandomUtilsTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
-
 
     @Test
     void fillPracticeFormTest() {
